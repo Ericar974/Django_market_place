@@ -1,0 +1,20 @@
+{% block title %}Modification du produit{% endblock title %}
+
+{% block content %}
+    {% if id %}
+    <h3 class="page-header">Modification du produit</h3>
+    <form action="{% url 'market:edit' id=id %}" method="post" role="form">
+    {% else %}
+    <h3 class="page-header">Inscription du produit</h3>
+    <form action="{% url 'market:add' %}" method="post" role="form">
+    {% endif %}
+      {% csrf_token %}
+      {{ form }}
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit">Envoyer</button>
+        </div>
+      </div>
+    </form>
+    <a href="{% url 'market:index' %}">Revenir</a>
+{% endblock content %}

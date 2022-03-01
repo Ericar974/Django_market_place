@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="../../static/market/style.css">
+
+<section class="bodymain">
+    <h1>Market Place</h1>
+    <div class="bigcontainer">
+        {% block content %}
+        <button><a href="{% url 'market:add' %}">Ajouter un produit</a></button>
+        {% for test in tests %}
+        {% if test.stock > 0 %}
+
+        <div class="contener">
+            <a href="{{ test.id }}">
+            <h3>{{ test.text }}</h3>
+            <img src="{{test.img}}" alt="product image" width="300px" height="300px">
+            <p>Prix : {{test.price}}€</p>
+            <p>En stock</p>
+            </a>
+        </div>
+
+
+        {% endif %}
+        {% endfor %}
+
+        {% endblock content %}
+    </div>
+
+    
+
+</section>
+

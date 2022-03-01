@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    width: fit-content;
+    height: fit-content;
+}
+.bodymain {
+    background-color: lightblue;
+    
+}
+
+.contener {
+    border: 1px solid black;
+    width: 300px;
+    margin: 20px;
+}
+
+.bigcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}

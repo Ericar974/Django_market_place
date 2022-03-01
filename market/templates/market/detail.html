@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="../../static/market/style.css">
+{% block title %}Détails du produit{% endblock title %}
+
+{% block content %}
+    <h3>Informations détaillées du produit</h3>
+    <h3>{{ tests.text }}</h3>
+    <p>Price : {{tests.price}}€</p>
+    
+    
+    <br>
+    <img src="{{ tests.img }}" alt="image produit" width="300px" height="300px">
+
+    <h5>Description</h5>
+    <p>{{ tests.description}}</p>
+    <h5>Date</h5>
+    {{ tests.date }}
+    <br>
+    <h5>Stock : {{tests.stock}}</h5>
+    <a href="{% url 'market:index' %}" >Revenir</a>
+    <button><a href="{{tests.id}}/edit" >Modifier</a></button>
+    <button><a href="{{tests.id}}/delete" onclick="return confirm('Are you sure you want to delete this item?')">Supprimer</a></button>
+{% endblock content %}  
